@@ -1,0 +1,91 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: rgb(69, 22, 179);
+}
+form {
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border: 2px solid white;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.952);
+    text-align: center;
+    color : rgba(255, 255, 255, 0.457);
+    
+}
+h1{
+    text-align: center;
+    justify-content: center;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    image-resolution: 100dpi;
+    size-adjust: 20%;
+    height: 200px;
+    width: 300px;
+    margin-left: 39.5%;
+    margin-right: 39.5%;
+
+}
+.login:hover {
+    background-color: rgb(0, 0, 0);
+    border: 2px solid white;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.952);
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: black;
+    width: 100%;
+    height: 280px;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    align-items: center;
+    color: white;
+
+
+}
+.copy_right {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-right: 40%;
+}
+.social_media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+.help {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.help p {
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+}
+span {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.social_media p {
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+}
