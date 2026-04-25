@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 #Side_bar {
     opacity:0;
@@ -76,9 +75,9 @@ span {
     flex-wrap: wrap;
     gap: 20px;
     height: 100vh;
-    width: 50px;
+    width: 55px;
     background-color: rgb(0, 0, 51);
-    margin-left: 0px;
+    margin-left: -5px;
 }
 .top_upper_bar{
     display: flex;
@@ -100,6 +99,7 @@ span {
     justify-content: center;
     text-decoration: none;
     margin: 10px;
+    color: rgb(0, 255, 174);
 }
 .top_upper_bar div a:hover{
     background-color: rgb(0, 255, 174);
@@ -109,5 +109,10 @@ span {
 }
 .logo{
     font-size: 50px;    
-    margin: 0%;
+    background-color: rgb(0, 255, 174);
+    text-align: center;
+}
+.fixed_part{
+    position: fixed;
+    width: 100%;
 }
