@@ -3,84 +3,148 @@
     margin:0;
     padding: 0;
 }
+/* for the background */
 body {
-    background-color: rgb(255, 255, 255);
-}
-form {
+    background: light-dark(#fff, #000);
+    display: grid;
+    place-items: center;
+    padding-block: 1rem;
+    min-height: 100vh;
+    font-family: 'Noto Sans', 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
+      'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  }
+body::before {
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 80%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0%
+        calc(var(--size) * 0.32) / var(--size) var(--size);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -2;
+  }
+/* for the login form */
+.login_dv {
+    display: none;
+    grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
-    background-color: gray;
-    border: 2px solid white;
+    background-color: rgb(210, 212, 222,0.6);
+    border: 2px solid transparent;
     margin-top: 40px;
     margin-bottom: 100px;
     margin-left: 500px;
     margin-right: 500px;
+    width: 400px;
+    height: 480px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.952);
-    text-align: center;
-    color : rgba(255, 255, 255, 0.457);
+    color : rgba(0, 0, 0);
     opacity:0.9;
+    text-align: center;
     
 }
 form a {
     text-decoration: none;
-    color: rgb(0, 255, 174);
-}
-form button a{
-    color: black;
-    border-radius: 5px;
-}
-h1{
-    text-align: center;
-    justify-content: center;
-}
-.logo {
-    display: flex;
-    justify-content: center;
-    image-resolution: 100dpi;
-    size-adjust: 20%;
-    height: 200px;
-    width: 300px;
-    margin-left: 39.5%;
-    margin-right: 39.5%;
+    color: rgb(0, 0, 51);
+    font-family: 'Times New Roman', Times, serif;
+    
 
 }
-.login:hover {
-    background-color: rgb(4, 4, 75);
-    border: 2px solid white;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.952);
+form ul{
+        list-style-type: none;
 }
+/* login button */
+.show_btn {
+    font-size: 14px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 51);
+    color: rgba(255, 255, 255);
+    border-radius:15px;
+    font-size:40px;
+    padding:5px;
+    margin-left:90%;
+    align-items: center;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 2em;
+    max-width: 100%;
+    min-width: 80px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+    justify-self: center;
+}
+
+/* click for the pop up login box */
+
+.login_dv .cancel_btn {
+    display: flex-end;
+    position: relative;
+    top: 2px;
+
+}
+.cancel {
+    display: flex;
+    font-size: 24px;
+    color: rgb(0, 0, 51);
+    cursor: pointer;
+}
+#show:checked ~ .login_dv {
+    display: grid;
+}
+#show:checked ~ .container .show_btn {
+    display: none;
+}
+/* footer part is here */
 .footer {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: rgb(4, 4, 75);
+    background-color: rgb(0, 0, 51);;
     width: 100%;
-    height: 280px;
-    margin-left: 0%;
-    margin-bottom: 0%;
+    line-height: 2;
+    margin-bottom: 0;
     align-items: center;
     color: white;
-
-
 }
 .copy_right {
     font-size: 14px;
     align-items: center;
-    
+    margin-bottom: 0;
 
 }
 .social_media {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
     flex-direction: column;
-
 }
 .help {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
     flex-direction: column;
 }
@@ -88,19 +152,32 @@ h1{
     font-size: 18px;
     font-weight: bold;
     align-items: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 span {
     display: flex;
     gap: 50px;
     margin-left: 5px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .social_media p {
     font-size: 18px;
     font-weight: bold;
     align-items: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-#Side_bar {
+.footer a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* #Side_bar {
     opacity:0;
 }
 .items{
@@ -122,7 +199,7 @@ div h2 {
     font-size: larger;
     font-family: 'Times New Roman', Times, serif;
     margin-left: 8px;
-    color: darkblue;
+    color: rgb(0, 0, 51);
     margin-top: 8px;
 }
 .btn_one{
@@ -144,22 +221,106 @@ div h2 {
     font-size: x-large;
 
 }
-li:hover{
+/* li:hover{
     background-color: white;
     opacity: 0.5;
 
+} */
+
+
+/* From Uiverse.io by Praashoo7 */ 
+.input {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+  align-items: center;
 }
-li{
-    color: rgb(0, 0, 0);
-    padding:5px;
+
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
 }
-li a {
-    text-decoration: none;
+.login_dv{
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
+.container {
+    margin-left: 0%;
+    margin-right: 0%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;    
+}
+.name{
+    font-size:100px ;
+    font-variation-settings: "wdth" 125;
+    text-transform: uppercase;
+    line-height: 1.8;
+	grid-column: 1 / -1;
     color: rgb(0, 0, 51);
 }
-#Side_bar:checked ~ .side_bar {
-    left: 0px;   
+.name fit-text {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
-#Side_bar:checked ~ .side_bar .btn_one{
-    opacity: 0;
+/* From Uiverse.io by cssbuttons-io */ 
+.submit_bt {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+  justify-self: center;
+}
+
+.submit_bt:active,submit_bt:hover {
+  outline: 0;
+}
+
+.submit_bt span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.submit_bt:hover span {
+  background: none;
+}
+
+.submit_bt:active {
+  transform: scale(0.9);
+}
+input[type="checkbox"] {
+    display: none;
 }
